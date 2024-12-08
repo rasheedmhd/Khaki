@@ -2,6 +2,11 @@ package token
 
 type TokenType string
 
+var keywords = map[string]TokenType {
+	"func": FUNCTION,
+	"let":  LET,
+}
+
 type Token struct {
 	Type    TokenType
 	Literal string
