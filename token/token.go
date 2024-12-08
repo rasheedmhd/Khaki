@@ -7,6 +7,13 @@ var keywords = map[string]TokenType {
 	"let":  LET,
 }
 
+func lookupIdent(ident string) TokenType {
+	if tok, ok := keywords[ident]; ok {
+		return tok
+	}
+	return IDENT
+}
+
 type Token struct {
 	Type    TokenType
 	Literal string
